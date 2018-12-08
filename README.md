@@ -4,29 +4,29 @@
 
 ****************************  BEGIN OF THE PROJECT ON GITHUB  ****************************
 
-->> : On focus for now 
+On focus for now 
 
-Game Design Document
-> GameOverview
+> Game Design Document
+ GameOverview
 
-Project Management & Organisation
->
+> Project Management & Organisation
 
-Graphics And GUI Assets
->
 
-Design & CSS
->
+> Graphics And GUI Assets
 
-Sound Design & Music
->
 
-Next Script Implementations :
-->> Game Loading Preload Scene
-> Login / Subscribe Scene
+> Design & CSS
 
-Licence & Commercial Aspects
-> Project Licence (MIT for the moment)
 
-Work in progress without order
-> Space Ship Crew AI
+> Sound Design & Music
+
+
+> Next Script Implementations :
+ Game Loading Preload Scene
+ Login / Subscribe Scene
+
+> Licence & Commercial Aspects
+ Project Licence (MIT for the moment)
+
+> Work in progress without order
+ Space Ship Crew AI
