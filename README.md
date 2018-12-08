@@ -7,7 +7,7 @@
 On focus for now 
 
 > Game Design Document
->> GameOverview
+* GameOverview
 
 > Project Management & Organisation
 
@@ -22,11 +22,11 @@ On focus for now
 
 
 > Next Script Implementations :
->> Game Loading Preload Scene
->> Login / Subscribe Scene
+* Game Loading Preload Scene
+* Login / Subscribe Scene
 
 > Licence & Commercial Aspects
->> Project Licence (MIT for the moment)
+* Project Licence (MIT for the moment)
 
 > Work in progress without order
->> Space Ship Crew AI
+* Space Ship Crew AI
