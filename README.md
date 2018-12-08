@@ -30,3 +30,13 @@ On focus for now
 
 > Work in progress without order
 * Space Ship Crew AI
+
+****************************  OTHER MMO PROJECT ON RMMV  ****************************
+To inspire my work many projects, which helped give really useful insights.
+
+https://github.com/Nelderson/MV_Online
+
+https://github.com/shivanshs9/MMORPG-TLO
+
+https://github.com/SirMcPotato/RMMV-MMO-webkit
+
