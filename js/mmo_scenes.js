@@ -151,3 +151,92 @@ function MMO_Scene_Title() {
 	    AudioManager.stopBgs();
 	    AudioManager.stopMe();
 	};
+ //-----------------------------------------------------------------------------
+	//
+	// Override of Scene_Boot.start, for calling our own Scene_Title!
+	// 
+
+	Scene_Boot.prototype.start = function() {
+	    Scene_Base.prototype.start.call(this);
+	    SoundManager.preloadImportantSounds();
+	    if (DataManager.isBattleTest()) {
+	        DataManager.setupBattleTest();
+	        SceneManager.goto(Scene_Battle);
+	    } else if (DataManager.isEventTest()) {
+	        DataManager.setupEventTest();
+	        SceneManager.goto(Scene_Map);
+	    } else {
+	        this.checkPlayerLocation();
+	        DataManager.setupNewGame();
+	        SceneManager.goto(MMO_Scene_Title);
+	    }
+	    this.updateDocumentTitle();
+	};
+
+
+
+
+    //-----------------------------------------------------------------------------
+	//
+	// Overriding 'Input._onKeyDown' to pass 'event' as parameter
+	// to 'Input._shouldPreventDefault'
+	// 
+
+	Input._onKeyDown = function(event) {
+	    if (this._shouldPreventDefault(event)) {
+	        event.preventDefault();
+	    }
+	    if (event.keyCode === 144) {    // Numlock
+	        this.clear();
+	    }
+	    var buttonName = this.keyMapper[event.keyCode];
+	    if (buttonName) {
+	        this._currentState[buttonName] = true;
+	    }
+	};
+
+    //-----------------------------------------------------------------------------
+	//
+	// Overriding Input._shouldPreventDefault to allow the use of the 'backspace key'
+	// in input forms.
+	//
+
+	Input._shouldPreventDefault = function(e) {
+	    switch (e.keyCode) {
+		    case 8:     // backspace
+		    	if ($(e.target).is("input, textarea"))
+		    		break;
+		    case 33:    // pageup
+		    case 34:    // pagedown
+		    case 37:    // left arrow
+		    case 38:    // up arrow
+		    case 39:    // right arrow
+		    case 40:    // down arrow
+		        return true;
+	    }
+	    return false;
+	};
+
+
+
+	//-----------------------------------------------------------------------------
+	// MMO
+	//
+	// Lot of work to do here!
+	//
+
+    var MMO = function() {
+    	this.initialize();
+    }
+
+    MMO.prototype.initialize = function() {
+    	// SceneManager.
+    	this._bindBaseEvents();
+    }
+
+    MMO.prototype._bindBaseEvents = function() {
+    }
+
+    $mmo = new MMO();
+
+})();
